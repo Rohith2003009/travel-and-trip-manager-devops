@@ -24,6 +24,14 @@ pipeline {
             }
         }
 
+        stage('Check Docker') {
+            steps {
+                echo 'Checking Docker installation...'
+                bat 'docker --version'
+                bat 'docker compose version'
+            }
+        }
+
         stage('Docker Build') {
             steps {
                 echo 'Building Docker image...'
@@ -41,7 +49,7 @@ pipeline {
 
         stage('Verify') {
             steps {
-                echo 'Checking application container...'
+                echo 'Checking running containers...'
                 bat 'docker compose ps'
             }
         }
@@ -56,10 +64,4 @@ pipeline {
             echo 'CI/CD Pipeline failed!'
         }
     }
-    stage('Check Docker') {
-    steps {
-        bat 'docker --version'
-        bat 'docker compose version'
-    }
-}
 }
