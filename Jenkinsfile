@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                echo 'Checking out source code...'
+                echo 'Checking out code from GitHub...'
                 checkout scm
             }
         }
@@ -41,7 +41,7 @@ pipeline {
 
         stage('Verify') {
             steps {
-                echo 'Checking running containers...'
+                echo 'Checking application container...'
                 bat 'docker compose ps'
             }
         }
