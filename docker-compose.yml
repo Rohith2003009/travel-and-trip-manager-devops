@@ -1,0 +1,13 @@
+services:
+  travel-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: travel-trip-manager
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      MONGODB_URI: mongodb://host.docker.internal:27017/tripcraft
+    restart: unless-stopped

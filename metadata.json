@@ -1,0 +1,6 @@
+{
+  "name": "Travel and Trip Manager",
+  "description": "A comprehensive full-stack travel, trip, booking, and expense management application with real-time analytics, expense splitting, and admin dashboard in INR.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

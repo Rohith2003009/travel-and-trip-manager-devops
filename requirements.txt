@@ -1,0 +1,46 @@
+# Travel and Trip Manager (VoyageHub) - Technical Requirements
+# Location-based, Multi-Module Travel Management System
+
+## Tech Stack
+- **Frontend:** React.js (v19) with Tailwind CSS (v4) for styling, Lucide React for iconography, and Recharts for interactive analytics.
+- **Backend:** Node.js with Express.js server supplying REST APIs for Users, Destinations, Trips, Bookings, Expenses, and Admin operations.
+- **Database:** MongoDB (using Mongoose Schema conventions. Included is a high-fidelity database persistence layer that simulates MongoDB collections locally to allow instant running on Cloud Run, while exposing the exact Mongoose schema classes to connect to your live MongoDB cluster).
+- **Currency:** Indian Rupees (INR, ₹) exclusively.
+
+## Core Modules & Features
+
+### 1. User Module (Auth & Profile)
+- **Register:** New user sign-up with Name, Email, Password, and selection of Role (User/Admin).
+- **Login:** Token-based secure simulation of session/login verification.
+- **Logout:** Invalidate current user session.
+- **Profile Management:** View and edit personal profile details, set emergency contact, preferred travel style, and view statistical summary of trips.
+
+### 2. Destination Module
+- **Search & Filter:** Search by city, state, or category (Beaches, Mountains, Heritage, Wildlife). Filter by budget ranges.
+- **Destination Details:** View immersive cards containing highlights, ideal duration, weather recommendations, top attractions, entry fee, and booking options.
+- **Admin Management:** Admins can add, edit, and delete destinations from the catalog.
+
+### 3. Trip Module
+- **Create Trip:** Plan a trip by specifying a title, destination, start/end dates, total budget (₹), and co-travelers/members.
+- **Edit Trip:** Dynamic updates to itinerary dates, title, or budgets.
+- **Delete Trip:** Clean cancellation and deletion of trip assets and linked expenses.
+
+### 4. Booking Module
+- **Book Trip Components:** Simulates flight, hotel, and activity booking in Indian Rupees (₹).
+- **Cancel Booking:** Safe cancel process with refund simulation back into the user's budget.
+- **Booking History:** Detailed ledger of all past, pending, and upcoming reservations.
+
+### 5. Expense Module
+- **Add Expense:** Categorized logging (Food, Transport, Lodging, Sightseeing, Misc) with amount, date, and payer.
+- **Split Expense:** Smart split algorithm dividing expenses equally or unequally among co-travelers, calculating "Who owes whom".
+- **Expense History:** Visual progress of remaining budget, categorized expense pie chart, and transaction logs in ₹.
+
+### 6. Admin Module
+- **Manage Users:** Overview of all users, ability to block/unblock accounts or promote a user to Admin status.
+- **Manage Destinations:** Full CRUD panel to list, add, edit, and delete travel destinations.
+- **Manage Bookings:** Global list of all user bookings, with quick actions to approve, reject, or cancel.
+
+### 7. Real-Time Analytics & Financial Summary
+- **Financial Health:** Progress indicators tracking budget consumption.
+- **Interactive Charts:** Recharts Visualizations showing Category breakdowns (Pie Chart) and Budget vs. Expense comparative Bar Charts.
+- **Key Metrics:** Total spend, active trips, upcoming bookings, and pending splits.
