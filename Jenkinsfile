@@ -56,4 +56,10 @@ pipeline {
             echo 'CI/CD Pipeline failed!'
         }
     }
+    stage('Check Docker') {
+    steps {
+        bat 'docker --version'
+        bat 'docker compose version'
+    }
+}
 }
